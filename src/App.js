@@ -1,23 +1,87 @@
+// main file for react components
+
 import logo from './logo.svg';
 import './App.css';
 
+const title = 'REACT'; // if variable do not need anything from function body (component)
+// declare it outside
+const welcome = {
+  greeting: 'hey',
+  title: 'react',
+};
+
+function getByTitle(title) {
+  return title;
+}
+
+const list = [
+  {
+    title: 'React',
+    url: 'https://reactjs.org/',
+    author: 'Jordan Walke',
+    num_comments: 3,
+    points: 4,
+    objectID: 0,
+  },
+  {
+    title: 'Redux',
+    url: 'https://redux.js.org/',
+    author: 'Dan Abramov, Andrew Clark',
+    num_comments: 2,
+    points: 5,
+    objectID: 1,
+  },
+];
+
+// this is function component
+// ROOT COMPONENT
 function App() {
+  //something can be done here !
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // this is JSX syntax
+    // JSX allows to execute functions, expressions ,etc...
+    <div>
+      <h1>HELLO WORLD, {title}</h1>
+      <h2>{welcome.greeting} {welcome.title}</h2>
+      <h3>{getByTitle(welcome.greeting)} {getByTitle(welcome.title)}</h3>
+
+      {/* comment in jsx */}
+      <hr />
+      <List />
+
+      <Search />
+    </div>
+  );
+}
+
+// components should shale with complexity of app
+// child of App
+function List() {
+  return (
+    <ul>
+      {list.map(function (item){
+        return (
+          <li key={item.objectID}>
+            <span>
+              <a href={item.url}>{item.title}</a>
+            </span>
+            <span>{item.author}</span>
+            <span>{item.num_comments}</span>
+            <span>{item.points}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+//Child of App
+function Search() {
+  return (
+    <div>
+      <label htmlFor='search'>Search: </label>
+      <input id='search' type='text' />
     </div>
   );
 }
