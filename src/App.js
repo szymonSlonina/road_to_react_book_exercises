@@ -35,10 +35,9 @@ const list = [
 
 // this is function component
 // ROOT COMPONENT
-function App() {
+const App = () => //arrow functions
   //something can be done here !
-
-  return (
+  (
     // this is JSX syntax
     // JSX allows to execute functions, expressions ,etc...
     <div>
@@ -53,15 +52,12 @@ function App() {
       <Search />
     </div>
   );
-}
 
 // components should shale with complexity of app
 // child of App
-function List() {
-  return (
+const List = () => (
     <ul>
-      {list.map(function (item){
-        return (
+      {list.map(item => (
           <li key={item.objectID}>
             <span>
               <a href={item.url}>{item.title}</a>
@@ -70,20 +66,16 @@ function List() {
             <span>{item.num_comments}</span>
             <span>{item.points}</span>
           </li>
-        );
-      })}
+        ))}
     </ul>
   );
-}
 
 //Child of App
-function Search() {
-  return (
-    <div>
-      <label htmlFor='search'>Search: </label>
-      <input id='search' type='text' />
-    </div>
-  );
-}
+const Search = () => (
+  <div>
+    <label htmlFor='search'>Search: </label>
+    <input id='search' type='text' />
+  </div>
+);
 
 export default App;

@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')); // creates root element. React content will be embedded
+//into it.
+// render function is used to replace HTML node with JSX.
 root.render(
   <React.StrictMode>
     <App />
