@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './components/app/App';
+import Async from './components/async/Async';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root')); // creates root element. React content will be embedded
@@ -10,6 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root')); // creates ro
 root.render(
   <React.StrictMode>
     <App />
+    <Async />
   </React.StrictMode>
 );
 

@@ -1,6 +1,5 @@
 // main file for react components
 
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
